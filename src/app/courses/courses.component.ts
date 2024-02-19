@@ -4,13 +4,13 @@ import {Course} from '../model/course';
 import { NgFor, NgIf } from '@angular/common';
 import { HighlightDirective } from '../highlight.directive';
 import { CalculatorService } from '../calculator.service';
-import { YellowDirectiveDirective } from '../yellow-directive.directive';
+//import { YellowDirectiveDirective } from '../yellow-directive.directive';
 
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [NgFor, NgIf, HighlightDirective, YellowDirectiveDirective],
+  imports: [NgFor, NgIf, HighlightDirective],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
@@ -42,7 +42,7 @@ EnterMouse(){
 
 
 colorgreen(){
-  return 'red';
+  return 'green';
 }
 
 courses: Course[] = COURSES;
