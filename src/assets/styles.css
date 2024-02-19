@@ -38,7 +38,7 @@ button {
 }
 
 course-card.is-first {
-  border-top: 2px solid grey;
+  border-top: 2px solid red;
   padding-top: 20px;
 }
 
