@@ -1,13 +1,23 @@
-<div class="course-card">
+<div class="course-card" 
+    *ngIf="course"
+    [ngClass] = "cardClasses()" 
+    >
 
     <div class="course-title">
-       {{course.description}}
+       {{cardIndex + ' ' + course.description}}
     </div>
     <img width="300" alt="Angular Logo"
-         [src]="course.iconUrl">
+        *ngIf="isImageVisable();else noImage" 
+        [src]="course.iconUrl"
+         
+         >
     <div class="course-description">
         {{course.longDescription}}
 
         <button (click)="buttonClick()" >View Card</button>
 
 </div>
+
+<ng-template #noImage>
+    <h1>No Image Found</h1>
+</ng-template>

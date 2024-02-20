@@ -1,13 +1,18 @@
 <div class="top-menu">
 
   <img class="logo"
-       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+       src= "./../assets/angular_whiteTransparent.png" >
 
 </div>
 
 <div *ngIf="courses">
-  <div class="courses" *ngFor="let course of courses">
-  <course-card [course]="course" (buttonevent)="buttonEvent($event)"></course-card>
+  <div class="courses" *ngFor="let course of courses;index as i; first as isFirst; last as isLast">
+  <course-card 
+    [class.is-first]="isFirst"
+    [course]="course"
+    [cardIndex] = "i+1" 
+    (buttonevent)="buttonEvent($event)">
+  </course-card>
 
   </div>
 </div>
