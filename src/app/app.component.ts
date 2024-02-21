@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -16,9 +16,14 @@ export class AppComponent {
   title = 'angular-course';
 
   courses: Course[] = COURSES;
+  @ViewChild(CourseCardComponent)
+  card!: CourseCardComponent;
+
+
+
 
   buttonEvent(value:any){
-    console.log(value);
+    console.log(this.card);
     
   }
   
